@@ -373,7 +373,7 @@ lr_config = dict(
     warmup_iters=500,
     warmup_ratio=0.001,
     step=[20, 27])
-total_epochs = 1 # TODO, change back to 30 or 40
+total_epochs = 30 # TODO, change back to 30 or 40
 
 checkpoint_config = dict(interval=1) # TODO, change back to 10
 # yapf:disable
@@ -390,7 +390,7 @@ resume_from = None
 work_dir = '/work/work_dirs/round2/cascade_s50_rfp_mstrain_aug_alldata_v2'
 workflow = [('train', 1)]
 
-# fp16 = dict(loss_scale=512.)
+fp16 = dict(loss_scale=512.)
 cudnn_benchmark = False
 dist_params = dict(backend='nccl')
 optimizer_config = dict(grad_clip=None)
